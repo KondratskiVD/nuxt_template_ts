@@ -1,0 +1,15 @@
+@import url('https://rsms.me/inter/inter.css');
+
+@import "./utils/functions";
+@import "./utils/mixins";
+
+html {
+  @apply relative h-screen font-sans;
+
+  body {
+    min-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@import "./parts/loaders";

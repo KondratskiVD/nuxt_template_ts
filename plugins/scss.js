@@ -1,0 +1,6 @@
+import '../assets/vendor/fontawesome/scss/fontawesome.scss'
+import '../assets/vendor/fontawesome/scss/light.scss'
+import '../assets/vendor/fontawesome/scss/regular.scss'
+import '../assets/vendor/fontawesome/scss/brands.scss'
+import '../assets/vendor/fontawesome/scss/solid.scss'
+import '../assets/scss/app.scss'

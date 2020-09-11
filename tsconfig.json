@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": [
+      "esnext",
+      "esnext.asynciterable",
+      "dom"
+    ],
+    "esModuleInterop": true,
+    "allowJs": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "types": [
+      "@types/node",
+      "@types/lodash",
+      "@types/vue-the-mask",
+      "@types/nuxtjs__auth",
+      "@nuxt/types",
+      "@nuxtjs/axios",
+      "@nuxtjs/toast",
+      "@nuxtjs/moment",
+      "nuxt-i18n"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
