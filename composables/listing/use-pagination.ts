@@ -39,13 +39,15 @@ const usePagination = function <Item> (context: SetupContext, options: Partial<P
     }
 
     isFetchingRequest.value = true
-
     if (options.fetchRequest) {
       options.fetchRequest(searchData)
         .then((response: any) => {
+          if (pagination.value.total !== response.data.pagination.total) {
+            paginationStore.value = {}
+          }
           Vue.set(paginationStore.value, nextPage.value, {
             items: response.data.data,
-            pagination: response.data.meta.pagination
+            pagination: response.data.pagination
           })
           currentPage.value = nextPage.value
         })
@@ -53,7 +55,6 @@ const usePagination = function <Item> (context: SetupContext, options: Partial<P
           context.root.$toast.error(context.root.$t('errors.request_error').toString())
         })
         .finally(() => {
-          context.root.$store.dispatch('ui/toggleRefresh', false)
           isFetchingRequest.value = false
         })
     }
@@ -73,7 +74,9 @@ const usePagination = function <Item> (context: SetupContext, options: Partial<P
   }
 
   return {
+    isFetchingRequest,
     paginationList,
+    pagination,
     movePage,
     fetchPaginatedData
   }

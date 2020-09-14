@@ -17,18 +17,30 @@ export default {
     resetButton: 'Сбросить пароль',
     resetText: 'Мы отправили вам смс с кодом для сброса пароля'
   },
+  pagination: {
+    fromTo: '<span class="font-medium">{from}</span>-<span class="font-medium">{to}</span> из <span class="font-medium">{total}</span>'
+  },
   customer: {
     addresses: 'Адреса'
   },
   cleaning: {
     text: {
+      currency: 'грн.',
+      hours: 'ч.',
+      need_hoover: 'Нужен пылесос',
+      sub_additional_services: 'Кол-во доп сервисов',
+      sub_basic: 'Кол-во базовых уборок',
+      sub_maintain: 'Кол-во поддерживающих уборок',
+      records_not_found: 'Записей не найдено',
       cleaner_not_assigned: 'Клинер не назначен',
+      foreman_not_assigned: 'Бригадир не назначен',
       time_approved: 'Время подтверждено',
       time_not_approved: 'Время не подтверждено'
     },
     types: {
       base: 'Единоразовые уборки',
-      subscriptions: 'Подписки',
+      subscriptions: 'По подписке',
+      subscriptionPayments: 'Оплаты подписок',
       complex: 'Генеральные уборки',
       dryCleaning: 'Химчистки'
     },
@@ -54,6 +66,12 @@ export default {
       sewerage: 'Канализация',
       office_b2b: 'Офис',
       remake: 'Переуборка'
+    },
+    payment_types: {
+      cash: 'Наличные',
+      account: 'р/с',
+      cancel: 'Отмена',
+      foul: 'Нарушение'
     }
   },
   errors: {
