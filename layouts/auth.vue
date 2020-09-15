@@ -22,7 +22,7 @@ import Data from '~/interfaces/Data'
 
 export default defineComponent({
   metaInfo: {
-    title: 'Trade Admin'
+    title: 'My Uberem'
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setup (props: Data, context: SetupContext) {

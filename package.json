@@ -5,13 +5,13 @@
   "author": "Yaroslav Georgitsa",
   "private": true,
   "scripts": {
-    "dev": "env ENV_FILE=.env nuxt",
-    "build": "env ENV_FILE=.env nuxt build",
-    "start": "env ENV_FILE=.env nuxt start",
-    "generate": "env ENV_FILE=.env nuxt generate",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "test": "jest",
-    "deploy-production": "env ENV_FILE=.env.production nuxt generate && rsync -avh --delete dist/ uberem_usr@49.12.113.46:/var/www/html/my.uberem.com.ua/site/public/"
+    "deploy-production": "nuxt generate --dotenv=.env.production && rsync -avh --delete dist/ uberem_usr@49.12.113.46:/var/www/html/my.uberem.com.ua/site/public/"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.7",

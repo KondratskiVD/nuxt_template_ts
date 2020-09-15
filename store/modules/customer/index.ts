@@ -14,13 +14,21 @@ export const getters: GetterTree<RootState, RootState> = {
 }
 
 export const mutations: MutationTree<RootState> = {
-  SET_FULL_PROFILE: (state, fullProfile: object) => {
-    state.fullProfile = fullProfile
-    state.fullProfileLastFetch = new Date()
+  SET_FULL_PROFILE: (state, fullProfile?: object) => {
+    if (fullProfile) {
+      state.fullProfile = fullProfile
+      state.fullProfileLastFetch = new Date()
+    } else {
+      state.fullProfile = {}
+      state.fullProfileLastFetch = moment().subtract(1, 'months').toDate()
+    }
   }
 }
 
 export const actions: ActionTree<RootState, RootState> = {
+  clearFullProfile ({ commit }) {
+    commit('SET_FULL_PROFILE', null)
+  },
   fetchFullProfile ({ commit, state, dispatch }, isForce = false) {
     return new Promise((resolve, reject) => {
       if (!state.requestingFullProfile && Math.abs(moment().diff(state.fullProfileLastFetch, 'seconds')) > (isForce ? 30 : 600)) {

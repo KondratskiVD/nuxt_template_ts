@@ -1,12 +1,3 @@
-const args = require('yargs').argv
-
-let { env } = args
-if (!env) {
-  env = ''
-}
-
-require('dotenv').config({ path: `${process.env.ENV_FILE}` })
-
 export default {
   mode: 'spa',
   // server: {
@@ -82,9 +73,7 @@ export default {
     '@nuxtjs/pwa',
     // https://www.npmjs.com/package/@nuxtjs/toast
     '@nuxtjs/toast',
-    'nuxt-i18n',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    ['@nuxtjs/dotenv', { filename: `${process.env.ENV_FILE}` }]
+    'nuxt-i18n'
   ],
   moment: {
     locales: ['ru']
@@ -182,8 +171,8 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
-    }
+    // extend (config, ctx) {
+    // }
   },
   tailwindcss: {
     configPath: '~/config/tailwind.config.js',
@@ -197,18 +186,18 @@ export default {
   },
   pwa: {
     manifest: {
-      name: 'Trade Admin Application',
-      short_name: 'Trade Admin'
+      name: 'My Uberem Application',
+      short_name: 'My Uberem'
     },
     meta: {
-      name: 'Trade Admin',
-      author: 'Think Studion',
+      name: 'My Uberem',
+      author: 'uberem.com.ua',
       lang: 'en',
-      description: 'Trede admin',
+      description: 'My Uberem',
       ogImage: {
-        path: 'https://my.app.uberem.com.ua',
-        width: '640',
-        height: '640'
+        path: 'https://my.uberem.com.ua/images/site/auth_hero.jpg',
+        width: '1600',
+        height: '1066'
       }
     }
   },
@@ -218,5 +207,10 @@ export default {
   generate: {
     // choose to suit your project
     interval: 2000
+  },
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL
+  },
+  privateRuntimeConfig: {
   }
 }

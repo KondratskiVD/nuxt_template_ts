@@ -91,6 +91,7 @@ export default defineComponent({
     function logout () {
       context.root.$auth.logout()
         .then(() => {
+          context.root.$store.dispatch('customer/clearFullProfile')
           context.root.$store.dispatch('ui/toggleSide', false)
           context.root.$store.dispatch('ui/toggleRefresh', false)
           window.location.reload()
