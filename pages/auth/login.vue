@@ -105,7 +105,7 @@ export default defineComponent({
     async function login () {
       isLoading.value = true
       try {
-        await context.root.$axios.get(process.env.baseUrl + '/sanctum/csrf-cookie').then(() => {
+        await context.root.$axios.get(process.env.BASE_URL + '/sanctum/csrf-cookie').then(() => {
           context.root.$auth.loginWith('local', {
             data: {
               device_name: 'account',

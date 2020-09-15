@@ -5,12 +5,13 @@ if (!env) {
   env = ''
 }
 
-require('dotenv').config({ path: '.env' + (env ? ('.' + env) : '') })
+require('dotenv').config({ path: `${process.env.ENV_FILE}` })
+
 export default {
   mode: 'spa',
   // server: {
   //  port: 8080, // default: 3000
-  //  host: 'console.joseph-henry.home' // default: localhost
+  //  host: 'my.app.uberem.com.ua' // default: localhost
   // },
   /*
   ** Headers of the page
@@ -83,7 +84,7 @@ export default {
     '@nuxtjs/toast',
     'nuxt-i18n',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    ['@nuxtjs/dotenv', { filename: `${process.env.ENV_FILE}` }]
   ],
   moment: {
     locales: ['ru']
@@ -205,15 +206,13 @@ export default {
       lang: 'en',
       description: 'Trede admin',
       ogImage: {
-        path: 'http://app.joseph-henry.home/',
+        path: 'https://my.app.uberem.com.ua',
         width: '640',
         height: '640'
       }
     }
   },
   env: {
-    baseUrl: process.env.BASE_URL,
-    avatarLink: process.env.AVATAR_LINK,
     theme_color: '#2b6cb0'
   },
   generate: {

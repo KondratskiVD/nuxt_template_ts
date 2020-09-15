@@ -20,3 +20,7 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+mv  /etc/letsencrypt/renewal/crm.uberem.com.ua.conf /etc/letsencrypt/renewal/crm.uberem.com.ua.conf_back2
+mv  /etc/letsencrypt/live/crm.uberem.com.ua /etc/letsencrypt/live/crm.uberem.com.ua_back2
+mv  /etc/letsencrypt/archive/crm.uberem.com.ua /etc/letsencrypt/archive/crm.uberem.com.ua_back2
