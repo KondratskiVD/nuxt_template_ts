@@ -48,6 +48,7 @@
           href="https://t.me/uberemua"
           target="_blank"
           class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+          @click.prevent="chatWithManager"
         >
           <svg
             class="h-6 w-6 text-teal-300 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
@@ -85,7 +86,7 @@
             />
           </svg>
           <span class="ml-4">
-            Telegram Бот
+            Заказать через бот?
           </span>
         </a>
       </nav>
@@ -95,7 +96,26 @@
 
 <script>
 export default {
-  name: 'Menu'
+  name: 'Menu',
+  methods: {
+    chatWithManager () {
+      let redirect = false
+      try {
+        if (window.jivo_api) {
+          window.jivo_api.open()
+        } else {
+          redirect = true
+        }
+      } catch (err) {
+        redirect = true
+      }
+
+      if (redirect) {
+        window.open('https://t.me/uberemua', '_blank').focus()
+      }
+    }
+  }
+
 }
 </script>
 
