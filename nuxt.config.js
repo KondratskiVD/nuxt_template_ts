@@ -45,7 +45,9 @@ export default {
     '~/plugins/directives',
     '~/plugins/scss',
     '~/plugins/v-tooltip',
-    '~/plugins/v-clipboard'
+    '~/plugins/v-clipboard',
+    '~/plugins/vue-meta',
+    '~/plugins/jivochat'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -209,7 +211,8 @@ export default {
     interval: 2000
   },
   publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL
+    baseURL: process.env.BASE_URL,
+    jivositeID: process.env.JIVOSITE_ID
   },
   privateRuntimeConfig: {
   }

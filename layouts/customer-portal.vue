@@ -164,7 +164,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, SetupContext } from '@vue/composition-api'
+import { computed, defineComponent, onMounted, SetupContext } from '@vue/composition-api'
 import Data from '@/interfaces/Data'
 import CustomerPortalMenu from '@/components/elements/customer-portal/Menu.vue'
 import ProfileDropdown from '@/components/elements/customer-portal/ProfileDropdown.vue'
@@ -174,12 +174,21 @@ export default defineComponent({
     ProfileDropdown,
     CustomerPortalMenu
   },
-  metaInfo: {
-    title: 'Customer Admin'
+  metaInfo () {
+    return {
+      title: 'Личный кабинет',
+      script: [
+        // eslint-disable-next-line no-undef
+        { src: `//code-ya.jivosite.com/widget/${this.$config.jivositeID}`, async: true }
+      ]
+    }
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setup (props: Data, context: SetupContext) {
     const user = computed(() => context.root.$store.getters.user)
+
+    onMounted(() => {
+    })
 
     return { user }
   }
