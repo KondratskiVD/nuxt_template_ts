@@ -168,6 +168,7 @@ import { computed, defineComponent, onMounted, SetupContext } from '@vue/composi
 import Data from '@/interfaces/Data'
 import CustomerPortalMenu from '@/components/elements/customer-portal/Menu.vue'
 import ProfileDropdown from '@/components/elements/customer-portal/ProfileDropdown.vue'
+import {MetaInfo} from "vue-meta/types/vue-meta";
 
 export default defineComponent({
   components: {
@@ -175,13 +176,16 @@ export default defineComponent({
     CustomerPortalMenu
   },
   metaInfo () {
-    return {
+    const data: MetaInfo = {
       title: 'Личный кабинет',
       script: [
         // eslint-disable-next-line no-undef
-        { src: `//code-ya.jivosite.com/widget/${this.$config.jivositeID}`, async: true }
       ]
     }
+    if (this.$config.jivositeID && data.script) {
+      data.script.push({ src: `//code-ya.jivosite.com/widget/${this.$config.jivositeID}`, async: true })
+    }
+    return data
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setup (props: Data, context: SetupContext) {
