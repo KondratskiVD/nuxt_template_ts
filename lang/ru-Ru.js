@@ -13,7 +13,7 @@ export default {
     orRegistrationLink: 'Или',
     registrationLink: 'зарегистрироваться?',
     forgotLink: 'забыли пароль?',
-    forgotLinkRegister: 'востановить пароль?',
+    forgotLinkRegister: 'воcстановить пароль?',
     loginLink: 'или на страницу входа?',
     loginButton: 'Войти',
     forgotPasswordPage: 'Сброс пароля',
@@ -33,7 +33,7 @@ export default {
   },
   customer: {
     addresses: 'Адреса',
-    addressesNotFound: 'В системе не найдено ни одного адресса зарегистрированного не ваше номер. Пожалуйста закажите уборку и менеджеры внесут адрес в систему'
+    addressesNotFound: 'В системе не найдено ни одного адреса зарегистрированного на ваш номер. Пожалуйста закажите уборку и менеджеры внесут адрес в систему'
   },
   cleaning: {
     text: {
@@ -90,7 +90,7 @@ export default {
     request_error: 'Ошибка соединения с сервером',
     login_error: 'Ошибка во время входа в кабинет',
     data_not_found: 'Данные не найдены',
-    try_refresh: 'Пожалуйста обновить страницу',
+    try_refresh: 'Пожалуйста обновите страницу',
     copy_error: 'Ошибка во время копирования'
   },
   success: {
