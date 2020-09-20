@@ -82,7 +82,7 @@ export default {
   },
   toast: {
     position: 'top-right',
-    duration: 10000
+    duration: 15000,
   },
   /*
   ** Axios module configuration

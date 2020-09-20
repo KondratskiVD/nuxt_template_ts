@@ -8,10 +8,18 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
+    purgeLayersByDefault: true
   },
   theme: {
     extend: {
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1460px',
+        '3xl': '1680px'
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans]
       },
@@ -30,7 +38,7 @@ module.exports = {
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus'],
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    borderColor: ['responsive', 'hover', 'focus', 'focus-within'],
+    borderColor: ['responsive', 'hover', 'focus', 'focus-within']
   },
   plugins: [
     require('@tailwindcss/ui')({

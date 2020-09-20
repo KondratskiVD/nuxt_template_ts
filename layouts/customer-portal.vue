@@ -160,6 +160,7 @@
         </div>
       </div>
     </div>
+    <notifications group="main" />
   </div>
 </template>
 
@@ -168,7 +169,7 @@ import { computed, defineComponent, onMounted, SetupContext } from '@vue/composi
 import Data from '@/interfaces/Data'
 import CustomerPortalMenu from '@/components/elements/customer-portal/Menu.vue'
 import ProfileDropdown from '@/components/elements/customer-portal/ProfileDropdown.vue'
-import {MetaInfo} from "vue-meta/types/vue-meta";
+import { MetaInfo } from 'vue-meta/types/vue-meta'
 
 export default defineComponent({
   components: {

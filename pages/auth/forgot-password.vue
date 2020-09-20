@@ -65,12 +65,14 @@
 
 <script lang="ts">
 import { ref, defineComponent, SetupContext } from '@vue/composition-api'
+import { mask } from 'vue-the-mask'
 import Data from '~/interfaces/Data'
 
 export default defineComponent({
   layout () {
     return 'auth'
   },
+  directives: { mask },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setup (props: Data, context: SetupContext) {
     const phone = ref('+380 (')
@@ -81,10 +83,10 @@ export default defineComponent({
     async function sendKey () {
       isLoading.value = true
       try {
-        await context.root.$axios.post(process.env.API_URL + '/reset-password', {
-          email: phone.value
+        await context.root.$axios.post('reset-password', {
+          phone: phone.value
         }).then(() => {
-          // context.root.$router.push({ path: '/auth/reset-password', query: { email: email.value } })
+          context.root.$router.push({ path: '/auth/reset-password', query: { p: phone.value } })
           context.root.$toast.success(context.root.$t('auth.resetText').toString())
           phone.value = ''
         }).catch((error) => {
@@ -110,23 +112,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style scoped lang="scss">
-.auth-form {
-  background-color: rgba(#fff, 0.9);
-
-  .loader {
-    display: none;
-  }
-
-  &.loading {
-    .loader {
-      display: block;
-    }
-  }
-}
-
-.loader {
-  background-color: rgba(#fff, 0.9);
-}
-</style>

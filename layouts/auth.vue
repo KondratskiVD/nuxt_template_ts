@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-dark flex">
-    <div class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+    <div class="lg:w-1/2 2xl:w-1/3 3xl:w-1/4 flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
       <nuxt class="" />
     </div>
     <div class="hidden lg:block relative w-0 flex-1">
@@ -13,6 +13,7 @@
         Powered by <a target="_blank" href="https://uberem.com.ua/">Uberem</a>
       </div>
     </div>
+    <notifications group="main" />
   </div>
 </template>
 

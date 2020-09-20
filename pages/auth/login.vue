@@ -5,9 +5,24 @@
         class="h-24 w-auto mx-auto"
         src="/images/site/logo-jh.svg"
       >
-      <h2 class="mt-4 text-3xl leading-9 font-bold text-white text-center">
+      <h2 class="mt-4 text-3xl leading-9 font-bold text-white">
         {{ $t('auth.loginPage') }}
       </h2>
+      <p class="mt-2 text-sm leading-5 text-gray-600 max-w">
+        {{ $t('auth.orRegistrationLink') }}
+        <n-link
+          v-slot="{ href, route, navigate }"
+          to="/auth/register"
+        >
+          <a
+            :href="href"
+            class="font-medium text-red-dark focus:outline-none focus:underline transition ease-in-out duration-150"
+            @click="navigate"
+          >
+            {{ $t('auth.registrationLink') }}
+          </a>
+        </n-link>
+      </p>
       <div
         v-if="$route.query.reset === 'done'"
         class="mt-3 text-center text-white"
@@ -51,7 +66,7 @@
                 class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
               >
               <div class="text-right text-sm">
-                <!--<n-link
+                <n-link
                   v-slot="{ href, route, navigate }"
                   to="/auth/forgot-password"
                 >
@@ -62,7 +77,7 @@
                   >
                     {{ $t('auth.forgotLink') }}
                   </a>
-                </n-link>-->
+                </n-link>
               </div>
             </div>
           </div>
@@ -137,23 +152,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style scoped lang="scss">
-.auth-form {
-  background-color: rgba(#fff, 0.9);
-
-  .loader {
-    display: none;
-  }
-
-  &.loading {
-    .loader {
-      display: block;
-    }
-  }
-}
-
-.loader {
-  background-color: rgba(#fff, 0.9);
-}
-</style>

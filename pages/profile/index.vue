@@ -97,41 +97,51 @@
             {{ $t('customer.addresses') }}
           </h3>
           <div class="mt-1" role="group" aria-labelledby="projects-headline">
-            <nuxt-link
-              v-for="address in profile.addresses"
-              v-slot="{ href, route, navigate }"
-              :key="address.uuid"
-              :to="{ path: 'address/' + address.uuid}"
+            <template
+              v-if="profile.addresses.length"
             >
-              <a
-                :href="href"
-                class="mt-1 group flex items-center px-3 py-2 text-sm leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition ease-in-out duration-150 cursor-pointer"
-                @click="navigate"
+              <nuxt-link
+                v-for="address in profile.addresses"
+                v-slot="{ href, route, navigate }"
+                :key="address.uuid"
+                :to="{ path: 'address/' + address.uuid}"
               >
-                <svg
-                  class="flex-shrink-0 -ml-1 mr-1 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                <a
+                  :href="href"
+                  class="mt-1 group flex items-center px-3 py-2 text-sm leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition ease-in-out duration-150 cursor-pointer"
+                  @click="navigate"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                <span class="truncate">
-                  {{ address.formatted }}
-                </span>
-              </a>
-            </nuxt-link>
+                  <svg
+                    class="flex-shrink-0 -ml-1 mr-1 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <span class="truncate">
+                    {{ address.formatted }}
+                  </span>
+                </a>
+              </nuxt-link>
+            </template>
+            <div
+              v-else
+              class="px-3 text-gray-600"
+            >
+              {{ $t('customer.addressesNotFound') }}
+            </div>
           </div>
         </div>
       </section>

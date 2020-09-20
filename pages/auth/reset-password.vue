@@ -94,13 +94,15 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, SetupContext } from '@vue/composition-api'
+import { ref, defineComponent, SetupContext, onMounted } from '@vue/composition-api'
+import { mask } from 'vue-the-mask'
 import Data from '~/interfaces/Data'
 
 export default defineComponent({
   layout () {
     return 'auth'
   },
+  directives: { mask },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setup (props: Data, context: SetupContext) {
     const phone = ref('+380 (')
@@ -113,10 +115,11 @@ export default defineComponent({
     async function resetPassword () {
       isLoading.value = true
       try {
-        await context.root.$axios.put(process.env.API_URL + '/reset-password', {
+        await context.root.$axios.put('reset-password', {
           phone: phone.value,
           key: key.value,
           password: password.value
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
         }).then((response) => {
           phone.value = ''
           key.value = ''
@@ -144,27 +147,16 @@ export default defineComponent({
       }
     }
 
+    onMounted(() => {
+      if (context.root.$route.query.key) {
+        key.value = '' + context.root.$route.query.key
+      }
+      if (context.root.$route.query.p) {
+        phone.value = ('+' + context.root.$route.query.p).substring(3)
+      }
+    })
+
     return { resetPassword, phone, key, password, isLoading }
   }
 })
 </script>
-
-<style scoped lang="scss">
-.auth-form {
-  background-color: rgba(#fff, 0.9);
-
-  .loader {
-    display: none;
-  }
-
-  &.loading {
-    .loader {
-      display: block;
-    }
-  }
-}
-
-.loader {
-  background-color: rgba(#fff, 0.9);
-}
-</style>

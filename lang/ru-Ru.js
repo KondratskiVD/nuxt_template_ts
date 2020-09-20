@@ -3,25 +3,37 @@
 export default {
   auth: {
     login: 'Номер телефона',
+    phoneSMS: 'Вам будет отправлено SMS',
     password: 'Пароль',
     newPassword: 'Новый пароль',
+    firstName: 'Имя',
+    lastName: 'Фамилия',
     loginNewPassword: 'Пожалуйста войдите в систему с новым паролем',
-    loginPage: 'Мой кабинет',
+    loginPage: 'Войти в кабинет',
+    orRegistrationLink: 'Или',
+    registrationLink: 'зарегистрироваться?',
     forgotLink: 'забыли пароль?',
+    forgotLinkRegister: 'востановить пароль?',
     loginLink: 'или на страницу входа?',
     loginButton: 'Войти',
     forgotPasswordPage: 'Сброс пароля',
     forgotButton: 'Отправить код для смены пароля?',
-    key: 'Код',
+    key: 'Код из SMS',
     resetPasswordPage: 'Сброс пароля',
     resetButton: 'Сбросить пароль',
-    resetText: 'Мы отправили вам смс с кодом для сброса пароля'
+    resetText: 'Мы отправили вам смс с кодом для сброса пароля',
+    registerText: 'Мы отправили вам смс с кодом для проверки номера телефона',
+    registerPage: 'Регистрация аккаунта',
+    registerPageVerification: 'Подтверждение номера телефона',
+    registerButton: 'Зарегистрироваться',
+    verifyButton: 'Проверить и зарегистрироваться'
   },
   pagination: {
     fromTo: '<span class="font-medium">{from}</span>-<span class="font-medium">{to}</span> из <span class="font-medium">{total}</span>'
   },
   customer: {
-    addresses: 'Адреса'
+    addresses: 'Адреса',
+    addressesNotFound: 'В системе не найдено ни одного адресса зарегистрированного не ваше номер. Пожалуйста закажите уборку и менеджеры внесут адрес в систему'
   },
   cleaning: {
     text: {

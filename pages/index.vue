@@ -9,7 +9,7 @@
       v-else
       class="bg-white shadow overflow-hidden sm:rounded-md"
     >
-      <ul>
+      <ul v-if="profile.addresses.length">
         <li
           v-for="address in profile.addresses"
           :key="address.uuid"
@@ -77,6 +77,12 @@
           </nuxt-link>
         </li>
       </ul>
+      <div
+        v-else
+        class="p-8 text-center text-gray-900"
+      >
+        {{ $t('customer.addressesNotFound') }}
+      </div>
     </div>
   </div>
 </template>

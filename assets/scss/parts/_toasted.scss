@@ -1,0 +1,7 @@
+.toasted {
+  &.toasted-primary {
+    &.error {
+      @apply bg-red-dark;
+    }
+  }
+}

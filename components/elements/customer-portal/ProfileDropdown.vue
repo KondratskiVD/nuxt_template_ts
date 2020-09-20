@@ -55,18 +55,35 @@
           >
             <a
               :href="href"
-              class="block px-4 py-2 text-sm text-gray-dark hover:bg-gray-light transition-colors ease-in-out duration-150"
+              class="group flex px-4 py-2 text-sm text-gray-dark hover:bg-gray-light transition-colors ease-in-out duration-150"
               role="menuitem"
               @click="navigate"
-            >Профиль</a>
+            >
+              <svg
+                class="h-5 w-5 text-gray-dark group-hover:text-red-dark transition ease-in-out duration-150 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Профиль
+            </a>
           </n-link>
           <a
             href="#"
-            class="block px-4 py-2 text-sm text-gray-dark hover:bg-gray-light transition-colors ease-in-out duration-150"
+            class="group flex px-4 py-2 text-sm text-gray-dark hover:bg-gray-light transition-colors ease-in-out duration-150"
             role="menuitem"
             @click.prevent="isOpenProfileMenu=false; logout()"
           >
-            <i class="text-red-dark far fa-door-open" />
+            <svg
+              class="h-5 w-5 text-gray-dark group-hover:text-red-dark transition ease-in-out duration-150 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
             <span>{{ $t('adminPortal.general.logout') }}</span>
           </a>
         </div>
