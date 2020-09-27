@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('@tailwindcss/ui/colors')
 /*
 ** TailwindCSS Configuration File
 **
@@ -24,14 +25,20 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans]
       },
       colors: {
-        gray: Object.assign(defaultTheme.colors.gray, {
+        gray: Object.assign(colors.gray, {
           light: '#dbdada',
           default: '#54576b',
           dark: '#323A45'
         }),
-        red: Object.assign(defaultTheme.colors.red, {
+        red: Object.assign(colors.red, {
           dark: '#C72825'
-        })
+        }),
+        uberem: {
+          purple: '#5a30f0',
+          'purple-light': '#897df2',
+          turqouise: '#3ed6d2',
+          black: '#1d1d1d'
+        }
       }
     }
   },

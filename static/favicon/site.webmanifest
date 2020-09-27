@@ -1,6 +1,6 @@
 {
-    "name": "My Uberem",
-    "short_name": "My Uberem",
+    "name": "MyUberem",
+    "short_name": "MyUberem",
     "icons": [
         {
             "src": "/favicon/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#c72825",
-    "background_color": "#c72825",
+    "theme_color": "#5a30f0",
+    "background_color": "#5a30f0",
     "display": "standalone"
 }

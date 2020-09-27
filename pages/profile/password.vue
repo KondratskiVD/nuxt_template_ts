@@ -125,7 +125,7 @@
                     aria-checked="false"
                     class=" relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline"
                     :class="{
-                      'bg-red-dark':removeSessions,
+                      'bg-uberem-purple':removeSessions,
                       'bg-gray-200':!removeSessions,
                     }"
                     @click="removeSessions = !removeSessions"
@@ -154,7 +154,7 @@
               <span class="w-full inline-flex rounded-md shadow-sm">
                 <button
                   type="submit"
-                  class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-red-dark hover:shadow-lg focus:outline-none focus:shadow-outline-indigo transition-all ease-in-out duration-500"
+                  class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-uberem-purple hover:shadow-lg focus:outline-none focus:shadow-outline-indigo transition-all ease-in-out duration-500"
                 >
                   {{ $t('adminPortal.password.change') }}
                 </button>

@@ -1,0 +1,21 @@
+.svg-animated-avatar {
+  animation: svg-animated-avatar 20s ease-in-out  infinite;
+}
+
+@keyframes svg-animated-avatar {
+  0% {
+    color: #5a30f0;
+  }
+  25% {
+    color: #897df2;
+  }
+  50% {
+    color: #3ed6d2;
+  }
+  75% {
+    color: #897df2;
+  }
+  100% {
+    color: #5a30f0;
+  }
+}

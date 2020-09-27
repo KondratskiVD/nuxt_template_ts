@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-white shadow overflow-hidden sm:rounded-md">
+  <div class="relative bg-white shadow  sm:rounded-md">
     <div
       class="block bg-gray-dark px-4 py-4 flex items-center justify-between border-t border-gray-200 sm:px-6"
       :class="[headAdditionalClasses]"

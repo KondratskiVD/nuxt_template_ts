@@ -17,9 +17,12 @@ html {
   &:not(.z-show-animated--show) {
     transition: z-index 0.5s step-end;
     z-index: -1;
+    pointer-events: none;
+    user-select: none;
   }
 }
 
+@import "./parts/svg-animated-avatar";
 @import "./parts/loaders";
 @import "./parts/toasted";
 @import "./parts/tooltip";

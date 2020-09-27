@@ -13,11 +13,11 @@
           class="border-t border-gray-200"
         >
           <div
-            class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
+            class="flex px-4 py-4 sm:px-6 bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
           >
-            <div class="px-4 py-4 sm:px-6">
+            <div class="flex-grow">
               <div class="flex items-center justify-between">
-                <div class="text-sm leading-5 font-medium text-red-dark truncate">
+                <div class="text-sm leading-5 font-medium text-uberem-purple truncate">
                   <div class="flex">
                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                       <path
@@ -94,6 +94,25 @@
                 </div>
               </div>
             </div>
+            <drop-down-menu
+              class="hidden pl-4"
+              :order="order"
+            >
+              <a
+                class="cursor-pointer group flex px-4 py-2 text-sm text-gray-dark hover:bg-gray-light transition-colors ease-in-out duration-150"
+                role="menuitem"
+              >
+                <svg
+                  class="h-5 w-5 text-gray-dark group-hover:text-uberem-purple transition ease-in-out duration-150 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                {{ $t('adminPortal.menuProfile.profile') }}
+              </a>
+            </drop-down-menu>
           </div>
         </li>
       </ul>
@@ -108,6 +127,7 @@ import Data from '~/interfaces/Data'
 import usePagination from '~/composables/listing/use-pagination'
 import PaginatedTable from '~/components/elements/customer-portal/PaginatedTable.vue'
 import CleanerTag from '~/components/elements/customer-portal/address/CleanerTag.vue'
+import DropDownMenu from '~/components/elements/customer-portal/address/DropDownMenu.vue'
 
 interface CleaningComplex {
   uuid: string
@@ -118,7 +138,8 @@ export default defineComponent({
   middleware: 'auth',
   components: {
     PaginatedTable,
-    CleanerTag
+    CleanerTag,
+    DropDownMenu
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setup (props: Data, context: SetupContext) {

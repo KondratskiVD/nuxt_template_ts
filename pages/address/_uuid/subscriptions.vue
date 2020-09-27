@@ -14,11 +14,11 @@
             class="border-t border-gray-200"
           >
             <div
-              class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
+              class="block bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
             >
               <div class="px-4 py-4 sm:px-6">
                 <div class="flex items-center justify-between">
-                  <div class="text-sm leading-5 font-medium text-red-dark truncate">
+                  <div class="text-sm leading-5 font-medium text-uberem-purple truncate">
                     <div class="flex">
                       <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                         <path
@@ -120,7 +120,7 @@
             >
               <div class="px-4 py-4 sm:px-6">
                 <div class="flex items-center justify-between">
-                  <div class="text-sm leading-5 font-medium text-red-dark truncate">
+                  <div class="text-sm leading-5 font-medium text-uberem-purple truncate">
                     <div class="flex">
                       <svg
                         class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"

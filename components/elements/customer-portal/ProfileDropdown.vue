@@ -4,6 +4,7 @@
     <div>
       <button
         id="user-menu"
+        v-click-outside="() => {isOpenProfileMenu = false}"
         class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:bg-cool-gray-100 lg:p-2 lg:rounded-md lg:hover:bg-cool-gray-100 transition-colors duration-500"
         aria-label="User menu"
         aria-haspopup="true"
@@ -40,7 +41,7 @@
     >
       <div
         v-show="isOpenProfileMenu"
-        class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg"
+        class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg z-10"
       >
         <div
           class="py-1 rounded-md bg-white shadow-xs"
@@ -60,7 +61,7 @@
               @click="navigate"
             >
               <svg
-                class="h-5 w-5 text-gray-dark group-hover:text-red-dark transition ease-in-out duration-150 mr-2"
+                class="h-5 w-5 text-gray-dark group-hover:text-uberem-purple transition ease-in-out duration-150 mr-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -82,7 +83,7 @@
               @click="navigate"
             >
               <svg
-                class="h-5 w-5 text-gray-dark group-hover:text-red-dark transition ease-in-out duration-150 mr-2"
+                class="h-5 w-5 text-gray-dark group-hover:text-uberem-purple transition ease-in-out duration-150 mr-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -99,7 +100,7 @@
             @click.prevent="isOpenProfileMenu=false; logout()"
           >
             <svg
-              class="h-5 w-5 text-gray-dark group-hover:text-red-dark transition ease-in-out duration-150 mr-2"
+              class="h-5 w-5 text-gray-dark group-hover:text-uberem-purple transition ease-in-out duration-150 mr-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

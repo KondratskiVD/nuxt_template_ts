@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import LazyLoadDirective from '~/directives/LazyLoadDiractive'
+import ClickOutside from '~/directives/ClickOutside'
 
-Vue.directive('lazyload', LazyLoadDirective)
+Vue.directive('click-outside', ClickOutside)

@@ -106,7 +106,7 @@
                 >
                   <a
                     :href="href"
-                    class="font-medium text-red-dark focus:outline-none focus:underline transition ease-in-out duration-150"
+                    class="font-medium text-uberem-purple focus:outline-none focus:underline transition ease-in-out duration-150"
                     @click="navigate"
                   >
                     {{ $t('auth.forgotLinkRegister') }}
@@ -120,7 +120,7 @@
             <span class="block w-full rounded-md shadow-sm">
               <button
                 type="submit"
-                class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-dark focus:outline-none focus:shadow-red-dark active:bg-red-dark transition duration-150 ease-in-out"
+                class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-uberem-purple focus:outline-none focus:shadow-uberem-purple active:bg-uberem-purple transition duration-150 ease-in-out"
                 @click.prevent="register"
               >
                 {{ $t('auth.registerButton') }}
@@ -134,7 +134,7 @@
             >
               <a
                 :href="href"
-                class="font-medium text-red-dark focus:outline-none focus:underline transition ease-in-out duration-150"
+                class="font-medium text-uberem-purple focus:outline-none focus:underline transition ease-in-out duration-150"
                 @click="navigate"
               >
                 {{ $t('auth.loginLink') }}
@@ -184,7 +184,7 @@
               <button
                 type="submit"
                 :disabled="isLoading"
-                class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-dark focus:outline-none focus:shadow-red-dark active:bg-red-dark transition duration-150 ease-in-out"
+                class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-uberem-purple focus:outline-none focus:shadow-uberem-purple active:bg-uberem-purple transition duration-150 ease-in-out"
                 @click.prevent="verify"
               >
                 {{ $t('auth.verifyButton') }}
