@@ -2,5 +2,5 @@ import Vue from 'vue'
 import VTooltip from 'v-tooltip'
 
 Vue.use(VTooltip, {
-  defaultTrigger: 'hover focus touch'
+  defaultTrigger: 'click hover focus touch'
 })

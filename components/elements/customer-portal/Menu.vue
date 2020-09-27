@@ -162,7 +162,7 @@
             <div class="w-0 flex-1 flex ">
               <a
                 :href="$config.connectLinkFB"
-                class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm leading-5 text-gray-400 font-medium border border-transparent hover:bg-uberem-turqouise rounded-md hover:text-white focus:outline-none focus:shadow-outline-blue focus:z-10 transition ease-in-out duration-150"
+                class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm leading-5 text-teal-200 font-medium border border-transparent hover:bg-uberem-turqouise rounded-md hover:text-white focus:outline-none focus:shadow-outline-blue focus:z-10 transition ease-in-out duration-150"
                 target="_blank"
                 title="facebook"
               >
@@ -178,7 +178,7 @@
             <div class="w-0 flex-1 flex">
               <a
                 :href="$config.connectLinkT"
-                class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm leading-5 text-gray-400 font-medium border border-transparent  hover:bg-uberem-turqouise rounded-md hover:text-white focus:outline-none focus:shadow-outline-blue focus:z-10 transition ease-in-out duration-150"
+                class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm leading-5 text-teal-200 font-medium border border-transparent  hover:bg-uberem-turqouise rounded-md hover:text-white focus:outline-none focus:shadow-outline-blue focus:z-10 transition ease-in-out duration-150"
                 target="_blank"
                 title="Telegram"
               >
@@ -192,7 +192,7 @@
             <div class="w-0 flex-1 flex">
               <a
                 :href="$config.connectLinkV"
-                class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm leading-5 text-gray-400 font-medium border border-transparent hover:bg-uberem-turqouise rounded-md hover:text-white focus:outline-none focus:shadow-outline-blue focus:z-10 transition ease-in-out duration-150"
+                class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm leading-5 text-teal-200 font-medium border border-transparent hover:bg-uberem-turqouise rounded-md hover:text-white focus:outline-none focus:shadow-outline-blue focus:z-10 transition ease-in-out duration-150"
                 target="_blank"
                 title="Viber"
               >

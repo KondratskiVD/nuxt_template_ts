@@ -43,6 +43,8 @@ export default {
       sub_additional_services: 'Кол-во доп сервисов',
       sub_basic: 'Кол-во базовых уборок',
       sub_maintain: 'Кол-во поддерживающих уборок',
+      sub_hours: 'Кол-во часов',
+      sub_end: 'Окончание подписки',
       records_not_found: 'Записей не найдено',
       cleaner_not_assigned: 'Клинер не назначен',
       foreman_not_assigned: 'Бригадир не назначен',
