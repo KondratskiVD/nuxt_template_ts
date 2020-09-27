@@ -12,6 +12,14 @@ html {
   }
 }
 
+.z-show-animated {
+  transition: z-index 0.5s step-start;
+  &:not(.z-show-animated--show) {
+    transition: z-index 0.5s step-end;
+    z-index: -1;
+  }
+}
+
 @import "./parts/loaders";
 @import "./parts/toasted";
 @import "./parts/tooltip";

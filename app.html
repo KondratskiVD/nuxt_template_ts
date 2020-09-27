@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
 <head {{ HEAD_ATTRS }}>
+  <meta name="node-env" content="{{process.env.NODE_ENV}}">
+
   {{ HEAD }}
 
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -13,7 +15,7 @@
   <meta name="msapplication-config" content="/favicon/browserconfig.xml">
   <meta name="theme-color" content="{{ENV.themeColor}}">
 
-  {% if (ENV.NODE_ENV === 'production') { %}
+  {% if (process.env.NODE_ENV === 'production') { %}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ENV.gaID}}&node={{process.env.NODE_ENV}}"></script>
   <script>
     window.dataLayer = window.dataLayer || []

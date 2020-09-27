@@ -64,32 +64,7 @@
                     </svg>
                     {{ $t(`cleaning.order_complex_types.${order.order_type}`) }}
                   </div>
-                  <div
-                    class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0"
-                    :class="{
-                      'opacity-50': !order.is_cleaner_ok
-                    }"
-                  >
-                    <svg
-                      class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span v-if="order.is_cleaner_ok && order.foreman">
-                      {{ order.foreman.name }}
-                    </span>
-                    <span v-else>
-                      {{ $t('cleaning.text.foreman_not_assigned') }}
-                    </span>
-                  </div>
+                  <cleaner-tag :order="order" />
                 </div>
                 <div
                   class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0 transition-colors duration-500"
@@ -132,6 +107,7 @@ import { computed, defineComponent, onMounted, SetupContext, watch } from '@vue/
 import Data from '~/interfaces/Data'
 import usePagination from '~/composables/listing/use-pagination'
 import PaginatedTable from '~/components/elements/customer-portal/PaginatedTable.vue'
+import CleanerTag from '~/components/elements/customer-portal/address/CleanerTag.vue'
 
 interface CleaningComplex {
   uuid: string
@@ -141,7 +117,8 @@ export default defineComponent({
   name: 'CleaningsComplex',
   middleware: 'auth',
   components: {
-    PaginatedTable
+    PaginatedTable,
+    CleanerTag
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setup (props: Data, context: SetupContext) {

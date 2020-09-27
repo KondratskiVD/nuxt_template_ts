@@ -13,7 +13,6 @@
         Powered by <a target="_blank" href="https://uberem.com.ua/">Uberem</a>
       </div>
     </div>
-    <notifications group="main" />
   </div>
 </template>
 

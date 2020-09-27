@@ -1,5 +1,5 @@
 <template>
-  <div v-if="address" class="px-4 sm:px-6 lg:px-8">
+  <div v-if="address" class="relative px-4 sm:px-6 lg:px-8">
     <div class="lg:flex lg:items-center lg:justify-between mb-8">
       <div class="flex-1 min-w-0">
         <h2 class="text-base font-bold leading-7 text-gray-900 sm:text-lg sm:leading-9 ">
@@ -110,6 +110,74 @@ c0-23.467,20.48-33.92,40.64-33.92H155.947z M362.667,448c0.213-23.573,8.64-32,32-
     </div>
     <div>
       <nuxt />
+    </div>
+
+    <div
+      class="fixed inset-0 overflow-hidden z-show-animated"
+      :class="{
+        'z-20 z-show-animated--show': $store.getters['address/cleanerProfile']
+      }"
+    >
+      <div class="absolute inset-0 overflow-hidden">
+        <section class="absolute inset-y-0 right-0 max-w-full flex ">
+          <transition
+            enter-active-class="transform transition ease-in-out duration-500 sm:duration-700"
+            enter-class="translate-x-full"
+            enter-to-class="translate-x-0"
+            leave-active-class="transform transition ease-in-out duration-500 sm:duration-700"
+            leave-class="translate-x-0"
+            leave-to-class="translate-x-full"
+          >
+            <div
+              v-show="$store.getters['address/cleanerProfile']"
+              class="w-screen max-w-md"
+            >
+              <div
+                v-if="$store.getters['address/cleanerProfile']"
+                class="h-full flex flex-col bg-gray-dark shadow-xl overflow-y-scroll"
+              >
+                <header class="px-4 py-6 sm:px-6">
+                  <div class="flex items-start justify-between space-x-3">
+                    <h2 class="text-lg leading-7 font-medium text-white">
+&nbsp;
+                    </h2>
+                    <div class="h-7 flex items-center">
+                      <button
+                        aria-label="Close panel"
+                        class="text-gray-400 hover:text-gray-500 transition ease-in-out duration-150 focus:outline-none"
+                      >
+                        <svg
+                          class="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          @click="$store.dispatch('address/setCleanerProfile', null)"
+                        >
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </header>
+                <!-- Main -->
+                <div>
+                  <div class="pb-1 sm:pb-6">
+                    <div class="space-y-6">
+                      <div class="relative ">
+                        <img
+                          class="w-full"
+                          :src="$config.crmAppURL + '/storage/avatars/img/1500x1500/' + $store.getters['address/cleanerProfile'].avatar"
+                          alt=""
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </transition>
+        </section>
+      </div>
     </div>
   </div>
 </template>

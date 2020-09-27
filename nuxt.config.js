@@ -212,6 +212,7 @@ export default {
     interval: 2000
   },
   publicRuntimeConfig: {
+    crmAppURL: process.env.CRM_APP_URL,
     baseURL: process.env.BASE_URL,
     jivositeID: process.env.JIVOSITE_ID
   },
