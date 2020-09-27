@@ -9,7 +9,7 @@
       v-else
       class="bg-white shadow overflow-hidden sm:rounded-md"
     >
-      <ul v-if="profile.addresses.length">
+      <ul v-if="profile.addresses && profile.addresses.length">
         <li
           v-for="address in profile.addresses"
           :key="address.uuid"

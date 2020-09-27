@@ -67,7 +67,29 @@
               >
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Профиль
+              {{ $t('adminPortal.menuProfile.profile') }}
+            </a>
+          </n-link>
+          <n-link
+            v-slot="{ href, navigate }"
+            to="/profile/password"
+            @click.native="isOpenProfileMenu=false"
+          >
+            <a
+              :href="href"
+              class="group flex px-4 py-2 text-sm text-gray-dark hover:bg-gray-light transition-colors ease-in-out duration-150"
+              role="menuitem"
+              @click="navigate"
+            >
+              <svg
+                class="h-5 w-5 text-gray-dark group-hover:text-red-dark transition ease-in-out duration-150 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+              </svg>
+              {{ $t('adminPortal.menuProfile.changePassword') }}
             </a>
           </n-link>
           <a
@@ -84,7 +106,7 @@
             >
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
-            <span>{{ $t('adminPortal.general.logout') }}</span>
+            <span>{{ $t('adminPortal.menuProfile.logout') }}</span>
           </a>
         </div>
       </div>

@@ -204,7 +204,8 @@ export default {
     }
   },
   env: {
-    theme_color: '#2b6cb0'
+    themeColor: '#c72825',
+    gaID: process.env.GA_ID
   },
   generate: {
     // choose to suit your project

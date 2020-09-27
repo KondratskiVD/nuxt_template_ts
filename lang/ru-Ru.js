@@ -98,12 +98,25 @@ export default {
     copied: 'Скопированно'
   },
   adminPortal: {
-    general: {
+    menuProfile: {
+      profile: 'Профиль',
+      changePassword: 'Смена пароля',
       logout: 'Выход'
     },
     profile: {
       phone: 'Номер телефона',
       name: 'Имя'
+    },
+    password: {
+      title: 'Смена пароля',
+      change: 'Сменить пароль',
+      newPassword: 'Новый пароль',
+      repeatPassword: 'Введите новый пароль еще раз',
+      oldPassword: 'Текущий пароль',
+      logoutFromOthers: 'Выйти со всех сессий кроме текущей',
+      fieldsEmpty: 'Все поля должны быть заполнены',
+      passwordsChangeNotMatch: 'Пароли не совпадают',
+      successChange: 'Пароль изменен!'
     }
   },
   premises: {
