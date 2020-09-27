@@ -205,7 +205,7 @@ export default {
   },
   env: {
     themeColor: '#5a30f0',
-    gaID: process.env.GA_ID
+    gaID: process.env.GA_ID,
   },
   generate: {
     // choose to suit your project
@@ -214,7 +214,18 @@ export default {
   publicRuntimeConfig: {
     crmAppURL: process.env.CRM_APP_URL,
     baseURL: process.env.BASE_URL,
-    jivositeID: process.env.JIVOSITE_ID
+    jivositeID: process.env.JIVOSITE_ID,
+    phoneTitleKS: '+38 (067) 401-69-77',
+    phoneKS: '+380674016977',
+    phoneTitleVF: '+38 (050) 348-61-07',
+    phoneVF: '+380503486107',
+    phoneTitleL: '+38 (063) 254-38-47',
+    phoneL: '+380632543847',
+    connectLinkFB: 'https://www.facebook.com/uberem.com.ua/',
+    connectLinkW: 'https://www.facebook.com/uberem.com.ua/',
+    connectLinkT: 'tg://resolve?domain=uberemua',
+    connectLinkV: 'viber://add?number=380632670396',
+    botT: 'https://t.me/uberem_bot'
   },
   privateRuntimeConfig: {
   }

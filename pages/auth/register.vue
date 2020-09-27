@@ -106,7 +106,7 @@
                 >
                   <a
                     :href="href"
-                    class="font-medium text-uberem-purple focus:outline-none focus:underline transition ease-in-out duration-150"
+                    class="font-medium text-uberem-purple-light focus:outline-none focus:underline transition ease-in-out duration-150"
                     @click="navigate"
                   >
                     {{ $t('auth.forgotLinkRegister') }}
@@ -134,7 +134,7 @@
             >
               <a
                 :href="href"
-                class="font-medium text-uberem-purple focus:outline-none focus:underline transition ease-in-out duration-150"
+                class="font-medium text-uberem-purple-light focus:outline-none focus:underline transition ease-in-out duration-150"
                 @click="navigate"
               >
                 {{ $t('auth.loginLink') }}

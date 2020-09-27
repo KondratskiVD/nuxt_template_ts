@@ -8,7 +8,7 @@
       <h2 class="mt-4 text-3xl leading-9 font-bold text-white">
         {{ $t('auth.loginPage') }}
       </h2>
-      <p class="mt-2 text-sm leading-5 text-gray-600 max-w">
+      <p class="mt-2 text-sm leading-5 text-gray-400 max-w">
         {{ $t('auth.orRegistrationLink') }}
         <n-link
           v-slot="{ href, route, navigate }"
@@ -16,7 +16,7 @@
         >
           <a
             :href="href"
-            class="font-medium text-uberem-purple focus:outline-none focus:underline transition ease-in-out duration-150"
+            class="font-medium text-uberem-purple-light focus:outline-none focus:underline transition ease-in-out duration-150"
             @click="navigate"
           >
             {{ $t('auth.registrationLink') }}
@@ -72,7 +72,7 @@
                 >
                   <a
                     :href="href"
-                    class="font-medium text-uberem-purple focus:outline-none focus:underline transition ease-in-out duration-150"
+                    class="font-medium text-uberem-purple-light focus:outline-none focus:underline transition ease-in-out duration-150"
                     @click="navigate"
                   >
                     {{ $t('auth.forgotLink') }}
