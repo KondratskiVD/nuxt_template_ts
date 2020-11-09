@@ -33,9 +33,9 @@
                     </span>
                   </div>
                 </div>
-                <div class="ml-2 flex-shrink-0 flex">
+                <div class="ml-2 flex flex-col">
                   <span
-                    class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full "
+                    class="text-center block px-2 text-xs leading-5 font-semibold rounded-full"
                     :class="{
                       'bg-purple-100 text-purple-800': order.order_status === 'ordered',
                       'bg-teal-100 text-teal-800': order.order_status === 'done',
@@ -44,36 +44,15 @@
                   >
                     {{ $t(`cleaning.order_statuses.${order.order_status}`) }}
                   </span>
+                  <rating :order="order"/>
                 </div>
               </div>
-              <div class="mt-2 sm:flex sm:justify-between">
-                <div class="sm:flex">
-                  <div class="mr-4 flex items-center text-sm leading-5 text-gray-500">
-                    <svg
-                      class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                      />
-                    </svg>
-                    {{ $t(`cleaning.order_base_types.${order.order_type}`) }}
-                  </div>
-                  <cleaner-tag :order="order" />
-                </div>
-                <div
-                  class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0 transition-colors duration-500"
-                  :class="{
-                    'opacity-25': !order.is_contact_ok,
-                  }"
-                >
+            </div>
+            <div class="mt-2 sm:flex sm:justify-between">
+              <div class="sm:flex">
+                <div class="mr-4 flex items-center text-sm leading-5 text-gray-500">
                   <svg
-                    class="flex-shrink-0 mr-1.5 h-5 w-5 "
+                    class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -82,16 +61,38 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
                     />
                   </svg>
-                  <span v-if="order.is_contact_ok">
-                    {{ $t('cleaning.text.time_approved') }}
-                  </span>
-                  <span v-else>
-                    {{ $t('cleaning.text.time_not_approved') }}
-                  </span>
+                  {{ $t(`cleaning.order_base_types.${order.order_type}`) }}
                 </div>
+                <cleaner-tag :order="order" />
+              </div>
+              <div
+                class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0 transition-colors duration-500"
+                :class="{
+                  'opacity-25': !order.is_contact_ok,
+                }"
+              >
+                <svg
+                  class="flex-shrink-0 mr-1.5 h-5 w-5 "
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span v-if="order.is_contact_ok">
+                  {{ $t('cleaning.text.time_approved') }}
+                </span>
+                <span v-else>
+                  {{ $t('cleaning.text.time_not_approved') }}
+                </span>
               </div>
             </div>
           </div>
@@ -108,6 +109,7 @@ import Data from '~/interfaces/Data'
 import usePagination from '~/composables/listing/use-pagination'
 import PaginatedTable from '~/components/elements/customer-portal/PaginatedTable.vue'
 import CleanerTag from '~/components/elements/customer-portal/address/CleanerTag.vue'
+import Rating from '~/components/elements/customer-portal/address/Rating.vue'
 
 interface CleaningBase {
   uuid: string
@@ -118,7 +120,8 @@ export default defineComponent({
   middleware: 'auth',
   components: {
     PaginatedTable,
-    CleanerTag
+    CleanerTag,
+    Rating
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setup (props: Data, context: SetupContext) {
@@ -162,5 +165,4 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
 </style>

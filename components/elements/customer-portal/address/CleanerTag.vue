@@ -9,7 +9,7 @@
   >
     <template
       v-if="order.is_cleaner_ok && order.cleaner && order.cleaner.avatar"
-    >
+    >цукцукуцк
       <div class="rounded-full w-6 h-6 overflow-hidden mr-1.5">
         <img
           class="w-full h-full object-cover"

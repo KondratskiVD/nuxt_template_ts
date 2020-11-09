@@ -69,7 +69,7 @@
                   clip-rule="evenodd"
                 />
               </svg>
-            </button>
+            </button>\
           </nav>
         </div>
       </nav>
