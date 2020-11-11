@@ -144,7 +144,7 @@ export default defineComponent({
         // eslint-disable-next-line no-console
         console.error(e.message)
       } finally {
-        isLoading.value = false
+        // isLoading.value = false
       }
     }
 

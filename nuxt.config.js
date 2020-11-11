@@ -47,7 +47,8 @@ export default {
     '~/plugins/v-tooltip',
     '~/plugins/v-clipboard',
     '~/plugins/vue-meta',
-    '~/plugins/jivochat'
+    '~/plugins/jivochat',
+    '~/plugins/vue-notification'
   ],
   /*
   ** Nuxt.js dev-modules

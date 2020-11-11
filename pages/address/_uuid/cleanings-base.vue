@@ -16,7 +16,7 @@
             class="block bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out"
           >
             <div class="px-4 py-4 sm:px-6">
-              <div class="flex items-center justify-between">
+              <div class="flex items-start sm:items-center justify-between">
                 <div class="text-sm leading-5 font-medium text-uberem-purple truncate">
                   <div class="flex">
                     <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -33,9 +33,10 @@
                     </span>
                   </div>
                 </div>
-                <div class="ml-2 flex flex-col">
+                <div class="ml-2 flex items-center flex-col-reverse sm:flex-row">
+                  <rating v-if="moment().diff(moment(order.datetime), 'days') < 8 && moment().diff(moment(order.datetime), 'days') >= 0 && order.order_status === 'done'" class="pb-2" :order="order" :type="'base'"/>
                   <span
-                    class="text-center block px-2 text-xs leading-5 font-semibold rounded-full"
+                    class="text-center ml-2 block px-2 text-xs leading-5 font-semibold rounded-full"
                     :class="{
                       'bg-purple-100 text-purple-800': order.order_status === 'ordered',
                       'bg-teal-100 text-teal-800': order.order_status === 'done',
@@ -44,15 +45,36 @@
                   >
                     {{ $t(`cleaning.order_statuses.${order.order_status}`) }}
                   </span>
-                  <rating :order="order"/>
                 </div>
               </div>
-            </div>
-            <div class="mt-2 sm:flex sm:justify-between">
-              <div class="sm:flex">
-                <div class="mr-4 flex items-center text-sm leading-5 text-gray-500">
+              <div class="mt-2 sm:flex sm:justify-between">
+                <div class="sm:flex">
+                  <div class="mr-4 flex items-center text-sm leading-5 text-gray-500">
+                    <svg
+                      class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                      />
+                    </svg>
+                    {{ $t(`cleaning.order_base_types.${order.order_type}`) }}
+                  </div>
+                  <cleaner-tag :order="order" />
+                </div>
+                <div
+                  class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0 transition-colors duration-500"
+                  :class="{
+                    'opacity-25': !order.is_contact_ok,
+                  }"
+                >
                   <svg
-                    class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                    class="flex-shrink-0 mr-1.5 h-5 w-5 "
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -61,38 +83,16 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  {{ $t(`cleaning.order_base_types.${order.order_type}`) }}
+                  <span v-if="order.is_contact_ok">
+                    {{ $t('cleaning.text.time_approved') }}
+                  </span>
+                  <span v-else>
+                    {{ $t('cleaning.text.time_not_approved') }}
+                  </span>
                 </div>
-                <cleaner-tag :order="order" />
-              </div>
-              <div
-                class="mt-2 flex items-center text-sm leading-5 text-gray-500 sm:mt-0 transition-colors duration-500"
-                :class="{
-                  'opacity-25': !order.is_contact_ok,
-                }"
-              >
-                <svg
-                  class="flex-shrink-0 mr-1.5 h-5 w-5 "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <span v-if="order.is_contact_ok">
-                  {{ $t('cleaning.text.time_approved') }}
-                </span>
-                <span v-else>
-                  {{ $t('cleaning.text.time_not_approved') }}
-                </span>
               </div>
             </div>
           </div>
