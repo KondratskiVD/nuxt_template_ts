@@ -73,12 +73,6 @@
           </nav>
         </div>
       </nav>
-      <div
-        v-if="isRequesting"
-        class="absolute w-full h-full top-0 left-0 bg-white bg-opacity-50 flex justify-center items-center"
-      >
-        <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-16 w-16" />
-      </div>
     </template>
   </div>
 </template>

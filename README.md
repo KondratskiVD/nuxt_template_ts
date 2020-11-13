@@ -11,6 +11,9 @@ $ yarn install
 # serve with hot reload at localhost:3000
 $ yarn dev
 
+# for using devtools for nuxt.js
+$ nuxt generate --devtools
+
 # build for production and launch server
 $ yarn build
 $ yarn start

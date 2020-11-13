@@ -42,7 +42,14 @@
                       </span>
                     </div>
                   </div>
-                  <div class="ml-2 flex-shrink-0 flex">
+                  <div class="ml-2 flex items-end sm:items-center flex-col-reverse sm:flex-row">
+                    <rating
+                      v-if="moment().diff(moment(order.datetime), 'days') < 8 && moment().diff(moment(order.datetime), 'days') >= 0 && order.order_status === 'done'"
+                      class="pb-2"
+                      :order="order"
+                      :type="'base'"
+                      @save-rating="fetchPaginatedData"
+                    />
                     <span
                       class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full "
                       :class="{
@@ -299,6 +306,7 @@ import Data from '~/interfaces/Data'
 import usePagination from '~/composables/listing/use-pagination'
 import PaginatedTable from '~/components/elements/customer-portal/PaginatedTable.vue'
 import CleanerTag from '~/components/elements/customer-portal/address/CleanerTag.vue'
+import Rating from '~/components/elements/customer-portal/address/Rating.vue'
 
 interface CleaningBase {
   uuid: string
@@ -309,7 +317,8 @@ export default defineComponent({
   middleware: 'auth',
   components: {
     PaginatedTable,
-    CleanerTag
+    CleanerTag,
+    Rating
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setup (props: Data, context: SetupContext) {
@@ -377,7 +386,8 @@ export default defineComponent({
       movePagePayment,
       isFetchingRequestPayment,
       paginationListPayment,
-      paginationPayment
+      paginationPayment,
+      fetchPaginatedData
     }
   }
 })
