@@ -34,8 +34,14 @@
                       </span>
                     </div>
                   </div>
-                  <div class="ml-2 flex items-center flex-col-reverse sm:flex-row">
-                    <rating v-if="moment().diff(moment(order.datetime), 'days') < 8 && moment().diff(moment(order.datetime), 'days') >= 0 && order.order_status === 'done'" class="pb-2" :order="order" :type="'base'"/>
+                  <div class="ml-2 flex items-end sm:items-center flex-col-reverse sm:flex-row">
+                    <rating
+                      v-if="moment().diff(moment(order.datetime), 'days') < 8 && moment().diff(moment(order.datetime), 'days') >= 0 && order.order_status === 'done'"
+                      class="pb-2"
+                      :order="order"
+                      :type="'base'"
+                      @save-rating="fetchPaginatedData"
+                    />
                     <span
                       class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full "
                       :class="{
@@ -372,7 +378,8 @@ export default defineComponent({
       movePagePayment,
       isFetchingRequestPayment,
       paginationListPayment,
-      paginationPayment
+      paginationPayment,
+      fetchPaginatedData
     }
   }
 })
