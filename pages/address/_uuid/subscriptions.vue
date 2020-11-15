@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="border-t border-gray-200 flex px-4 py-4 sm:px-6 bg-white">
+    <div class="border-t border-gray-200 flex px-4 py-4 sm:px-6 bg-white mb-2">
       <p class="text-sm leading-5 text-gray-500">
         К Вам на уборку приезжает 1 клинер &#128129;&#8205;&#9792;&#65039; ‍♀ (только женщины).<br>
         Мы берём с собой всю химию, губки, салфетки, мопы, швабру, ведро) 🧼<br>
